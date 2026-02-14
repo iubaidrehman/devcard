@@ -58,7 +58,7 @@ The entire user profile is managed via a single configuration file. No need to t
 export const siteConfig = {
   name: 'Ubaid Rehman',
   title: 'Senior Full Stack Engineer',
-  email: 'ubaid@example.com',
+  email: 'ubaidurrehman99913@gmail.com',
   url: 'https://iubaidrehman.com', // Override with ENV if needed
   links: {
     github: 'https://github.com/iubaidrehman',
