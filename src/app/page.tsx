@@ -6,6 +6,8 @@ import { HoloCard, Face } from '@/components/holo-card';
 import { generateVCard } from '@/lib/vcard';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { siteConfig } from '@/config/site';
+import { ParticleWave } from '@/components/particle-wave';
+// import { SpaceField } from '@/components/space-field'; // Deprecated for 3D version
 
 const QRCode = dynamic(() => import('react-qr-code'), { ssr: false });
 
@@ -41,9 +43,10 @@ export default function Home() {
 
             {/* 
         Layer 1: Foundation 
-        Technical Grid Pattern instead of "Glow Blobs" 
+        WebGL Particle Wave (Antigravity) 
       */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.4] pointer-events-none" />
+            <ParticleWave />
+            <div className="absolute inset-0 bg-grid-pattern opacity-[0.2] pointer-events-none" />
 
             {/* Theme Toggle */}
             <div className="absolute top-8 right-8 z-50">
@@ -60,10 +63,10 @@ export default function Home() {
                             {/* Header: Clean, Minimal, Architectural */}
                             <div className="flex flex-col items-center gap-6">
 
-                                {/* Avatar: Simple stroke, no neon glow */}
-                                <div className="relative h-28 w-28 rounded-full border-2 border-primary/20 p-1">
-                                    <div className="h-full w-full rounded-full bg-secondary flex items-center justify-center overflow-hidden">
-                                        <span className="text-3xl font-bold text-primary tracking-tighter">
+                                {/* Avatar: Electric Blue Border */}
+                                <div className="relative h-28 w-28 rounded-full border-4 border-primary p-1 bg-background shadow-lg">
+                                    <div className="h-full w-full rounded-full bg-black flex items-center justify-center overflow-hidden">
+                                        <span className="text-3xl font-bold text-white tracking-tighter">
                                             {user.firstName[0]}{user.lastName[0]}
                                         </span>
                                     </div>
@@ -75,12 +78,12 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            {/* Functional Accents: Tech Stack */}
+                            {/* Functional Accents: Tech Stack - High Contrast */}
                             <div className="flex flex-wrap justify-center gap-2">
                                 {['.NET 8', 'Next.js 14', 'React', 'Cloud'].map((tech) => (
                                     <span
                                         key={tech}
-                                        className="rounded-md border border-border bg-secondary/50 px-3 py-1 text-xs font-medium text-secondary-foreground"
+                                        className="rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-bold text-primary tracking-wide shadow-sm"
                                     >
                                         {tech}
                                     </span>
@@ -88,9 +91,9 @@ export default function Home() {
                             </div>
 
                             {/* Semantic Guidance */}
-                            <div className="flex items-center gap-2 text-[10px] text-muted-foreground font-medium tracking-widest uppercase opacity-60">
+                            <div className="flex items-center gap-2 text-[10px] text-muted-foreground font-bold tracking-widest uppercase opacity-80">
                                 <span>Tilt</span>
-                                <span className="w-1 h-1 rounded-full bg-primary/40"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
                                 <span>Flip</span>
                             </div>
                         </div>

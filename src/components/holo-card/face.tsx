@@ -21,7 +21,7 @@ export const Face = ({ children, className, variant = 'front' }: FaceProps) => {
                 // BORDER: Architectural double-border effect
                 'border border-border',
                 // BACKGROUND: Semantic Card Background (Opaque enough for text)
-                'bg-card shadow-xl',
+                'bg-card shadow-glass-lg dark:shadow-glass-dark',
                 // BLUR: Kept for slight depth, but less "frosted glass" more "acrylic"
                 'backdrop-blur-md',
                 'flex flex-col items-center justify-center text-center',
@@ -50,7 +50,7 @@ export const Face = ({ children, className, variant = 'front' }: FaceProps) => {
             Lighting: Subtle gradient from top-left (Highlight) 
             Replaces the "glossy overlay" with a more structural highlight
         */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50 pointer-events-none mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none mix-blend-overlay"></div>
         </div>
     );
 };

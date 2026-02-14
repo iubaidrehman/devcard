@@ -14,9 +14,9 @@ export const HoloCard = ({ children }: HoloCardProps) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
-    // Smooth spring physics for tilt
-    const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
-    const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+    // Smooth spring physics for tilt (Heavier feel)
+    const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+    const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
 
     // Map mouse position to rotation degrees
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['12deg', '-12deg']);
@@ -62,6 +62,7 @@ export const HoloCard = ({ children }: HoloCardProps) => {
                     className="relative h-full w-full cursor-pointer h-full w-full"
                     initial={false}
                     animate={{ rotateY: isFlipped ? 180 : 0 }}
+                    whileHover={{ scale: 1.02 }} // Tactile feedback
                     transition={{
                         duration: 0.6,
                         type: "spring",
