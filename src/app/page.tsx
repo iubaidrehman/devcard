@@ -43,7 +43,7 @@ export default function Home() {
 
             {/* 
         Layer 1: Foundation 
-        WebGL Particle Wave (Antigravity) 
+        WebGL Diamond Field 
       */}
             <ParticleWave />
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.2] pointer-events-none" />

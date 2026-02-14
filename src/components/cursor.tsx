@@ -11,7 +11,7 @@ export function Cursor() {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    // "Antigravity" Physics
+    // Physics Config
     // Heavy damping = "Underwater/Space" feel
     const springConfig = { stiffness: 100, damping: 25, mass: 0.8 };
     const springX = useSpring(mouseX, springConfig);
