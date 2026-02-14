@@ -1,25 +1,39 @@
-# Holo-Card: Professional Digital Business Card
+# Holo-Card: Professional Edition 💠
 
-> A high-performance, 3D interactive digital business card built with Next.js 14 and Framer Motion. Designed for Senior Engineers.
+> A high-performance, 3D interactive digital business card built with Next.js 14 and React Three Fiber. Designed for Senior Engineers.
+
+![Holo-Card Preview](https://via.placeholder.com/800x400?text=Holo-Card+Preview)
 
 ## 🚀 Features
 
+### 🌌 Premium 3D Design System
+A complete visual overhaul featuring a physics-based, 3D interactive environment.
+- **WebGL Diamond Field**: 4,000+ interactive 3D diamonds (InstancedMesh) that float, rotate, and react to mouse parallax.
+- **Magnetic Cursor**: A fluid, physics-based cursor that "drags" through the air and snaps to interactive elements with heavy damping.
+- **60-30-10 Palette**: 
+    - **60%**: Pure White / Abyss Black (Foundation)
+    - **30%**: Electric Blue `#2962FF` (Structure/Text)
+    - **10%**: Neon Lime `#C6FF00` (Accent/Pop)
+
+### 💠 3D Interactivity
 - **60fps Physics**: Decoupled Tilt (Mouse) and Flip (Click) layers for conflict-free 3D interaction.
-- **Architectural Design System**: 
-    - **OKLCH Color Palette**: Calibrated "Blueprint" (Light) and "Gunmetal" (Dark) themes.
-    - **Premium Visuals**: Comparison Grid background, noise texture overlay, and double-border glassmorphism.
+- **Deep Shadows**: Multi-layered "abyssal" shadows in dark mode for a premium glassmorphic feel.
+- **Hover Effects**: Tactile scale (1.02x), dynamic glare, and component repulsion.
+
+### ⚡ Core Functionality
 - **Dynamic vCard**: Generates standard VCF v3.0 files on the fly.
+- **Theme Toggle**: Robust, high-contrast switcher (White/Blue in Light, Black/Blue in Dark).
 - **Lazy Loading**: Optimized QR Code component for zero layout shift.
 - **Configuration**: Centralized site config for easy profile updates.
 
 ## 🛠️ Tech Stack
 
 - **Framework**: [Next.js 14](https://nextjs.org/) (App Router, Server Components)
+- **3D Engine**: [Three.js](https://threejs.org/) + [React Three Fiber](https://docs.pmnd.rs/react-three-fiber)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v4-style CSS variables)
 - **Themes**: [`next-themes`](https://github.com/pacocoursey/next-themes) (System preference support)
 - **Animation**: [Framer Motion](https://www.framer.com/motion/) (Spring physics)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Utilities**: `new-vcard` logic (custom implementation)
 
 ## ⚡ Getting Started
 
@@ -58,7 +72,7 @@ The entire user profile is managed via a single configuration file. No need to t
 export const siteConfig = {
   name: 'Ubaid Rehman',
   title: 'Senior Full Stack Engineer',
-  email: 'ubaidurrehman99913@gmail.com',
+  email: 'ubaid@example.com',
   url: 'https://iubaidrehman.com', // Override with ENV if needed
   links: {
     github: 'https://github.com/iubaidrehman',
@@ -73,13 +87,15 @@ export const siteConfig = {
 ```bash
 src/
 ├── app/              # Next.js App Router
-│   ├── layout.tsx    # Root layout with ThemeProvider
+│   ├── layout.tsx    # Root layout with ThemeProvider & Cursor
 │   └── page.tsx      # Main Card Page
 ├── components/
 │   ├── holo-card/    # 3D Card Architecture
 │   │   ├── root.tsx  # Context Layer
 │   │   ├── card.tsx  # Physics Layer (Tilt/Flip)
 │   │   └── face.tsx  # Visual Layer
+│   ├── cursor.tsx    # Custom Physics Cursor
+│   ├── particle-wave.tsx # WebGL 3D Diamond Field
 │   └── theme-toggle.tsx
 ├── config/           # Site Configuration
 │   └── site.ts
